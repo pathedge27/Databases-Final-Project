@@ -156,3 +156,15 @@
 		FOREIGN KEY (mid) REFERENCES media(mid) ON UPDATE RESTRICT ON DELETE RESTRICT,
 		FOREIGN KEY (genre_name) REFERENCES genre(genre_name) ON UPDATE RESTRICT ON DELETE RESTRICT
 	);
+    
+    DROP TABLE IF EXISTS borrows;
+	CREATE TABLE borrows (
+		phone_number VARCHAR(11) NOT NULL,
+		mid INT NOT NULL,
+		borrow_date DATE NOT NULL,
+		return_date DATE,
+		PRIMARY KEY (phone_number, mid),
+        
+		FOREIGN KEY (phone_number) REFERENCES patron(phone_number) ON UPDATE RESTRICT ON DELETE RESTRICT,
+		FOREIGN KEY (mid) REFERENCES media(mid) ON UPDATE RESTRICT ON DELETE RESTRICT
+	);
