@@ -63,21 +63,6 @@ library-management-system/
 
 ## Compilation and Running
 
-### Using Command Line
-1. Navigate to the project root directory
-2. Compile the Java files:
-   ```bash
-   javac -cp "lib/*" src/*.java -d bin/
-   ```
-3. Run the application:
-   ```bash
-   java -cp "bin:lib/*" Application
-   ```
-   For Windows, use semicolon instead of colon:
-   ```bash
-   java -cp "bin;lib/*" Application
-   ```
-
 ### Using an IDE (e.g., Eclipse, IntelliJ IDEA)
 1. Import the project as a Java project
 2. Add MySQL Connector/J to the project's build path
