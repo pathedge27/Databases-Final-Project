@@ -1,13 +1,16 @@
 -- Create the database
+DROP DATABASE IF EXISTS library_management;
 CREATE DATABASE library_management;
 USE library_management;
 
 -- Create Genre table
+DROP TABLE IF EXISTS Genre;
 CREATE TABLE Genre (
     genre_name VARCHAR(50) PRIMARY KEY
 );
 
 -- Create Media table (parent table)
+DROP TABLE IF EXISTS Media;
 CREATE TABLE Media (
     mid INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
@@ -19,6 +22,7 @@ CREATE TABLE Media (
 );
 
 -- Create Book table
+DROP TABLE IF EXISTS Book;
 CREATE TABLE Book (
     mid INT PRIMARY KEY,
     isbn VARCHAR(13) UNIQUE,
@@ -29,6 +33,7 @@ CREATE TABLE Book (
 );
 
 -- Create CD table
+DROP TABLE IF EXISTS CD;
 CREATE TABLE CD (
     mid INT PRIMARY KEY,
     artist VARCHAR(255),
@@ -38,6 +43,7 @@ CREATE TABLE CD (
 );
 
 -- Create Record table
+DROP TABLE IF EXISTS Record;
 CREATE TABLE Record (
     mid INT PRIMARY KEY,
     artist VARCHAR(255),
@@ -47,6 +53,7 @@ CREATE TABLE Record (
 );
 
 -- Create Magazine table
+DROP TABLE IF EXISTS Magazine;
 CREATE TABLE Magazine (
     mid INT PRIMARY KEY,
     issue_num VARCHAR(50),
@@ -55,6 +62,7 @@ CREATE TABLE Magazine (
 );
 
 -- Create Media_Genre junction table
+DROP TABLE IF EXISTS Media_Genre;
 CREATE TABLE Media_Genre (
     mid INT,
     genre_name VARCHAR(50),
@@ -64,6 +72,7 @@ CREATE TABLE Media_Genre (
 );
 
 -- Create Library table
+DROP TABLE IF EXISTS Library;
 CREATE TABLE Library (
     library_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -78,6 +87,7 @@ CREATE TABLE Library (
 );
 
 -- Create Employee table (parent table)
+DROP TABLE IF EXISTS Employee;
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -87,6 +97,7 @@ CREATE TABLE Employee (
 );
 
 -- Create Librarian table
+DROP TABLE IF EXISTS Librarian;
 CREATE TABLE Librarian (
     employee_id INT PRIMARY KEY,
     department ENUM('Childrens', 'Adult'),
@@ -95,6 +106,7 @@ CREATE TABLE Librarian (
 );
 
 -- Create Maintenance table
+DROP TABLE IF EXISTS Maitenance;
 CREATE TABLE Maintenance (
     employee_id INT PRIMARY KEY,
     specialty VARCHAR(100),
@@ -102,6 +114,7 @@ CREATE TABLE Maintenance (
 );
 
 -- Create Patron table
+DROP TABLE IF EXISTS Patron;
 CREATE TABLE Patron (
     phone_number VARCHAR(20) PRIMARY KEY,
     card_number VARCHAR(50),
@@ -117,6 +130,7 @@ CREATE TABLE Patron (
 );
 
 -- Create Library_Patron junction table
+DROP TABLE IF EXISTS Library_Patron;
 CREATE TABLE Library_Patron (
     library_id INT,
     phone_number VARCHAR(20),
@@ -126,6 +140,7 @@ CREATE TABLE Library_Patron (
 );
 
 -- Create Borrowing table
+DROP TABLE IF EXISTS Borrowing;
 CREATE TABLE Borrowing (
     phone_number VARCHAR(20),
     mid INT,
@@ -141,6 +156,7 @@ CREATE TABLE Borrowing (
 );
 
 -- Create Event table
+DROP TABLE IF EXISTS Event;
 CREATE TABLE Event (
     event_id INT PRIMARY KEY AUTO_INCREMENT,
     event_name VARCHAR(255) NOT NULL,
@@ -152,6 +168,7 @@ CREATE TABLE Event (
 );
 
 -- Create Event_Patron junction table
+DROP TABLE IF EXISTS Event_Patron;
 CREATE TABLE Event_Patron (
     event_id INT,
     phone_number VARCHAR(20),
@@ -161,6 +178,7 @@ CREATE TABLE Event_Patron (
 );
 
 -- Create Seller table
+DROP TABLE IF EXISTS Seller;
 CREATE TABLE Seller (
     seller_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -172,6 +190,7 @@ CREATE TABLE Seller (
 );
 
 -- Create Library_Seller junction table
+DROP TABLE IF EXISTS Library_Seller;
 CREATE TABLE Library_Seller (
     library_id INT,
     seller_id INT,
