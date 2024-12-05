@@ -97,12 +97,14 @@ public class Application {
         break;
       case "3":
         patronObject.thisMenu();
+        break;
       case "close":
         this.closeApp();
         break;
       default:
         System.out.println("invalid input");
         this.startMenu();
+        break;
     }
   }
 
