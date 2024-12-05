@@ -42,6 +42,7 @@ public class Patron extends Menu{
         break;
       case "6":
         this.update();
+        break;
       case "close":
         app.closeApp();
         break;
@@ -198,6 +199,7 @@ public class Patron extends Menu{
       this.thisMenu();
     }
     System.out.println("Registered!");
+    thisMenu();
   }
 
   public void checkOutBooks() {

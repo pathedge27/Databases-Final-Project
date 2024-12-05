@@ -122,11 +122,10 @@ public class Media extends Menu{
       statement.setString(1, mid);
       statement.setString(2, location);
       statement.execute();
+      this.seeChanges(s);
     } catch (SQLException e) {
       System.out.println("Encountered an error! " + e.getMessage());
     }
-    this.thisMenu();
-    this.seeChanges(s);
   }
 
   /**

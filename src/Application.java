@@ -99,6 +99,7 @@ public class Application {
         patronObject.thisMenu();
       case "close":
         this.closeApp();
+        break;
       default:
         System.out.println("invalid input");
         this.startMenu();
