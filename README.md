@@ -39,6 +39,8 @@ library-management-system/
 │   ├── Menu.java
 │   ├── Patron.java
 │   └── database.sql
+│   └── data.sql
+│   └── functions.sql
 ├── lib/
 │   └── mysql-connector-j-8.0.xx.jar
 └── README.md
