@@ -57,7 +57,7 @@ library-management-system/
 
 3. Grant necessary permissions to your application user:
    ```sql
-   GRANT ALL PRIVILEGES ON harry_potter_book_v2.* TO 'your_username'@'localhost';
+   GRANT ALL PRIVILEGES ON library_management.* TO 'your_username'@'localhost';
    FLUSH PRIVILEGES;
    ```
 
