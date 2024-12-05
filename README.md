@@ -37,10 +37,10 @@ library-management-system/
 │   ├── Event.java
 │   ├── Media.java
 │   ├── Menu.java
-│   ├── Patron.java
-│   └── database.sql
-│   └── data.sql
-│   └── functions.sql
+│   └── Patron.java
+├── data.sql
+├── database.sql
+├── functions.sql
 ├── lib/
 │   └── mysql-connector-j-8.0.xx.jar
 └── README.md
